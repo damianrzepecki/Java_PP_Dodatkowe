@@ -4,7 +4,6 @@ import controller.Controller;
 import tableTablica.Tablica;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Task_06 {
     public static int task(){
@@ -27,7 +26,7 @@ public class Task_06 {
             int minValue = userTable[0];
             int maxValue = userTable[0];
             if(userTable.length == 1){
-                System.out.printf("Tablica składa się tylko z jednego elementu");
+                System.out.printf("Tablica składa się tylko z jednego elementu\n");
             }else{
 
             for(int i=1; i<userTable.length;i++){

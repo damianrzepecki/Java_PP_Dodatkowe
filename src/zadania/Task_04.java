@@ -31,7 +31,7 @@ public class Task_04 {
                 maxValueSecond = userTable[0];
                 maxValueFirst = userTable[1];
                 int iloczyn = maxValueFirst*maxValueSecond;
-                System.out.printf("Największy iloczyn 2 liczb w tej tabeli to \"%s\" Liczby - \"%s\" i \"%s\"",iloczyn,maxValueSecond,maxValueFirst);
+                System.out.printf("Największy iloczyn 2 liczb w tej tabeli to \"%s\" Liczby - \"%s\" i \"%s\"\n",iloczyn,maxValueSecond,maxValueFirst);
             }else{
                 // Niestety też znalezione na StackOverflow
                 for(int i=1; i<userTable.length;i++) {
@@ -44,7 +44,7 @@ public class Task_04 {
                 }
             }
             int iloczyn = maxValueFirst*maxValueSecond;
-            System.out.printf("Największy iloczyn 2 liczb w tej tabeli to \"%s\" Liczby - \"%s\" i \"%s\"",iloczyn,maxValueSecond,maxValueFirst);
+            System.out.printf("Największy iloczyn 2 liczb w tej tabeli to \"%s\" Liczby - \"%s\" i \"%s\"\n",iloczyn,maxValueSecond,maxValueFirst);
         }while(Controller.runTaskAgain());
         return -1;
     }

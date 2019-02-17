@@ -26,7 +26,7 @@ public class Task_11 {
             int minValue = userTable[0];
             int maxValue = userTable[0];
             if (userTable.length == 1) {
-                System.out.printf("Tablica składa się tylko z jednego elementu");
+                System.out.printf("Tablica składa się tylko z jednego elementu\n");
             } else {
                 int sum = 0;
                 for (int i : userTable) {

@@ -39,7 +39,7 @@ public class Task_02 {
         }
 
         if (counter == 0){
-            System.out.println("Szukanej prze Ciebie liczby nie ma w tablicy");
+            System.out.println("Szukanej prze Ciebie liczby nie ma w tablicy\n");
         }else {
             System.out.printf("Szukana przez Ciebie liczba \"%d\" znajduje się w tablicy - %d razy \n", lookFor, counter);
         }

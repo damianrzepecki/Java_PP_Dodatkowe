@@ -17,13 +17,13 @@ public class Main {
                         Task_02.task();
                         break;
                     case 3:
-                        Task_01.task();
+                        Task_03.task();
                         break;
                     case 4:
                         Task_04.task();
                         break;
                     case 5:
-                        Task_01.task();
+                        Task_05.task();
                         break;
                     case 6:
                         Task_06.task();
@@ -32,13 +32,13 @@ public class Main {
                         Task_07.task();
                         break;
                     case 8:
-                        Task_01.task();
+                        Task_08.task();
                         break;
                     case 9:
-                        Task_01.task();
+                        Task_09.task();
                         break;
                     case 10:
-                        Task_01.task();
+
                         break;
                     case 11:
                         Task_11.task();

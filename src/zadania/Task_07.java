@@ -24,7 +24,7 @@ public class Task_07 {
             }
             System.out.println("\nTwoja tablica to:");
             System.out.print(Arrays.toString(userTable)+"\n");
-            System.out.println("\n\nPodaj Liczbę którą chcesz wyszukać w tablicy");
+            System.out.println("\n\nPodaj liczbę całkowitą - dla której będziemy szukali sumy dwóch liczb");
             Scanner scanner = new Scanner(System.in);
 
             while(!scanner.hasNextInt()){

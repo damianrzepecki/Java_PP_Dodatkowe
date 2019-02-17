@@ -10,20 +10,20 @@ public class Controller {
         Yes = T,t No = N,n
         Other answers will run the method again
          */
-        Scanner skanner = new Scanner(System.in);
-        System.out.println("\nCzy chcesz ponownie uruchomić program i wybrać zadanie? (T/N)");
-        String odp = skanner.nextLine().toUpperCase();
-        switch (odp) {
-            case "T":
-                return true;
-            case "N":
-                System.out.println("Program zostanie zamknięty");
-                return false;
-            default:
-                System.out.println("Wprowadziłeś złą zmienna spróbuj jeszcze raz");
-                runAgain();
+        while(true){
+            Scanner skanner = new Scanner(System.in);
+            System.out.println("\nCzy chcesz ponownie uruchomić program i wybrać zadanie? (T/N)");
+            String odp = skanner.nextLine().toUpperCase();
+            switch (odp) {
+                case "T":
+                    return true;
+                case "N":
+                    System.out.println("Program zostanie zamknięty");
+                    return false;
+                default:
+                    System.out.println("Wprowadziłeś złą zmienna spróbuj jeszcze raz");
+            }
         }
-        return false; //No mather what will you "Scan program won`t make it here
     }
     public static boolean runTaskAgain() {
         /*
@@ -31,21 +31,22 @@ public class Controller {
         Yes = T,t No = N,n
         Other answers will run the method again
          */
+        while(true){
         Scanner skanner = new Scanner(System.in);
-        System.out.println("\nCzy chcesz ponownie uruchomić Zadanie (Z), czy Wyjść z zadania (W)");
-        String odp = skanner.nextLine().toUpperCase();
-        switch (odp) {
-            case "Z":
-                return true;
-            case "W":
-
-                break;
-            default:
-                System.out.println("Wprowadziłeś złą zmienna spróbuj jeszcze raz");
-                runTaskAgain();
+            System.out.println("\nCzy chcesz ponownie uruchomić Zadanie (Z), czy Wyjść z zadania (W)");
+            String odp = skanner.nextLine().toUpperCase();
+            switch (odp) {
+                case "Z":
+                    return true;
+                case "W":
+                    return false;
+                default:
+                    System.out.println("Wprowadziłeś złą zmienna spróbuj jeszcze raz");
+            }
         }
-        return false;
     }
+
+
     public static int choice(int x){
         System.out.println("\n\nWprowadź numer");
         Scanner scanner = new Scanner((System.in));
