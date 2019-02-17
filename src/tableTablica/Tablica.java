@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Tablica {
     public static int[] automatic() {
-        System.out.println("Losowanie w zakresie 1-100");
         Scanner scanner = new Scanner(System.in);
         while(true){
             try {
@@ -15,22 +14,30 @@ public class Tablica {
                 if (ileElementow <= 0) {
                     System.out.println("Zła ilość elementów");
                     return automatic();
-
                 } else {
-                    int[] tablica = new int[ileElementow];
-                    for (int i = 0; i < ileElementow; i++) {
-                        System.out.printf("Wprowadz %s element - ", i + 1);
-                        Random random = new Random();
-                        tablica[i] = random.nextInt();
+                    System.out.println("Podaj zakres losowania elementów");
+                    System.out.print("Od - ");
+                    int min = scanner.nextInt();
+                    System.out.print("Do- ");
+                    int max = scanner.nextInt();
+                    System.out.println();
+                    if (min<=max){
+                        int[] tablica = new int[ileElementow];
+                        for (int i = 0; i < ileElementow; i++) {
+                            Random random = new Random();
+                            tablica[i] = random.nextInt((max - min) + 1) + min;
+                    }return tablica;
+                    }else{
+                        System.out.println("Zakres musi być poprawny wartość początkowa nie może być większa od wartości końcowej!");
+                        break;
                     }
-                    return tablica;
                 }
             }catch(InputMismatchException exception) {
-                System.out.println("Wprowadź liczbę całkowitą");
-                scanner.nextInt();
+                System.out.println("Wrowadzone przec Ciebie dane są niepoprawne, losowanie zacznie się ponownie");
+                scanner.next();
             }
-            return new int[0];
         }
+        return new int[0];
     }
 
     public static int[] userInput() {

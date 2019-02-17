@@ -6,10 +6,10 @@ import tableTablica.Tablica;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task_01 {
+public class Task_02 {
     public static int task(){
     do {
-        System.out.println("1.  Zadanie pierwsze - Znajdź indeks liczby K w tabeli liczb całkowitych A o rozmiarze N. ");
+        System.out.println("2.  Znajdź ile liczb K występuje w tabeli N liczb całkowitych. ");
         System.out.println("\n\nCzy chcesz stworzyć tablicę sam, czy chcesz wygenerować tablicę?\n1. Wygeneruj\n2. Stwórz sam\n0. Wyłącz program");
         int[] userTable = new int[0];
         switch (Controller.choice(2)) {
@@ -34,14 +34,19 @@ public class Task_01 {
         int counter = 0;
         for(int i=0; i<userTable.length;i++){
             if(userTable[i] == lookFor) {
-                System.out.printf("\nSzukana przez Ciebie liczba \"%d\" w tablicy ma indeks - %d", lookFor, i);
                 counter += 1;
-                }
             }
+        }
+
         if (counter == 0){
             System.out.println("Szukanej prze Ciebie liczby nie ma w tablicy");
+        }else {
+            System.out.printf("Szukana przez Ciebie liczba \"%d\" znajduje się w tablicy - %d razy \n", lookFor, counter);
         }
     }while(Controller.runTaskAgain());
-        return -1;
+    return -1;
     }
 }
+
+
+
