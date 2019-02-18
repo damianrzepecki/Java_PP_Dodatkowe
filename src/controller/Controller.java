@@ -64,5 +64,19 @@ public class Controller {
             }
         }
     }
+    public static int userInputNumber() {
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            try {
+                int lookFor = scanner.nextInt();
+                if (lookFor <= 0) {
+                    System.out.println("Zła ilość elementów - spróbuj ponownie");
+                }else return lookFor;
+            } catch (InputMismatchException exception) {
+                System.out.println("Wprowadź liczbę całkowitą");
+                scanner.next();
+            }
+        }
+    }
 }
 

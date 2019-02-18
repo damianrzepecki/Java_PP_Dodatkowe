@@ -24,55 +24,63 @@ public class Task_07 {
             }
             System.out.println("\nTwoja tablica to:");
             System.out.print(Arrays.toString(userTable)+"\n");
-            System.out.println("\n\nPodaj liczbę całkowitą - dla której będziemy szukali sumy dwóch liczb");
-            Scanner scanner = new Scanner(System.in);
+            if (userTable.length == 1) {
+                System.out.printf("Tablica składa się tylko z jednego elementu i nie mozna dla niej przeprowadzic obliczen\n");
+            } else {
+                System.out.println("\n\nPodaj liczbę całkowitą - dla której będziemy szukali sumy dwóch liczb");
+                Scanner scanner = new Scanner(System.in);
+                while (!scanner.hasNextInt()) {
+                    System.out.println("Podaj liczbę całkowitą - dla której będziemy szukali sumy dwóch liczb");
+                    scanner.next();
+                }
+                int lookFor = scanner.nextInt();
+                String result = null;
+                StringBuilder build = new StringBuilder();
+                for (int i = 0; i < userTable.length; i++) {
+                    for (int j = 0; j < userTable.length; j++) {
+                        if ((i != j) && (i != (userTable.length - 1))) {
+                            if (userTable[i] + userTable[j] == lookFor) {
+                                int x = userTable[i];
+                                int y = userTable[j];
+                                result = String.format("Szukana przez Ciebie liczba \"%s\" jest sumą liczb \"%s\" oraz \"%s\"\n", lookFor, x, y);
+                                build.append(result);
 
-            while(!scanner.hasNextInt()){
-                System.out.println("Podaj liczbę całkowitą - dla której będziemy szukali sumy dwóch liczb");
-                scanner.next();
-            }int lookFor = scanner.nextInt();
-            String result = null;
-            StringBuilder build = new StringBuilder();
-            for(int i=0; i<userTable.length;i++){
-                for(int j=0; j<userTable.length;j++){
-                    if((i != j) && (i != (userTable.length-1))){
-                        if(userTable[i] + userTable[j] == lookFor) {
-                            int x = userTable[i];
-                            int y = userTable[j];
-                            result = String.format("Szukana przez Ciebie liczba \"%s\" jest sumą liczb \"%s\" oraz \"%s\"\n", lookFor, x, y);
-                            build.append(result);
+                            }
                         }
                     }
                 }
-            }
-            //System.out.println(build);
+                if (result == null) {
+                    System.out.println("Taka suma nie istnieje");
+                }
+
+                //System.out.println(build);
             /*
             Znalezione na StacOverflow
             Usuwa zduplikowane linie
              */
 
-            String s = build.toString();
-            String[] tokens = s.split("\n");
-            StringBuilder resultBuilder = new StringBuilder();
-            Set<String> alreadyPresent = new HashSet<String>();
+                String s = build.toString();
+                String[] tokens = s.split("\n");
+                StringBuilder resultBuilder = new StringBuilder();
+                Set<String> alreadyPresent = new HashSet<String>();
 
-            boolean first = true;
-            for(String token : tokens) {
+                boolean first = true;
+                for (String token : tokens) {
 
-                if(!alreadyPresent.contains(token)) {
-                    if(first) first = false;
-                    else resultBuilder.append("\n");
+                    if (!alreadyPresent.contains(token)) {
+                        if (first) first = false;
+                        else resultBuilder.append("\n");
 
-                    if(!alreadyPresent.contains(token))
-                        resultBuilder.append(token);
+                        if (!alreadyPresent.contains(token))
+                            resultBuilder.append(token);
+                    }
+
+                    alreadyPresent.add(token);
                 }
+                String resulty = resultBuilder.toString();
+                System.out.println(resulty);
 
-                alreadyPresent.add(token);
             }
-            String resulty = resultBuilder.toString();
-            System.out.println(resulty);
-
-
         }while(Controller.runTaskAgain());
         return -1;
     }

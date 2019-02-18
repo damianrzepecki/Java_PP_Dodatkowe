@@ -6,6 +6,8 @@ import tableTablica.Tablica;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static controller.Controller.userInputNumber;
+
 public class Task_08 {
     public static int task() {
         do {
@@ -27,14 +29,9 @@ public class Task_08 {
             if(userTable.length==1){
                 System.out.println("Tablica ma tylko jeden element i nie można dla niej przeprowadzić tych obliczeń");
             }else{
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Podaj do któego elementu szukać sumy 2 najmniejszych liczb");
-                while (!scanner.hasNextInt()) {
-                    System.out.println("Podaj liczbę całkowitą");
-                    scanner.next();
-                }
-                int lookFor = scanner.nextInt();
-                if (lookFor > userTable.length) {
+                System.out.println("Ile najmniejszych elementów zsumować");
+                int lookFor = userInputNumber();
+                if (lookFor > userTable.length){
                     System.out.println("Liczba nie może być większa niż długość listy");
                 } else {
                     int[] tableMore = new int[lookFor];
@@ -53,12 +50,12 @@ public class Task_08 {
                         System.out.printf("Najmniejsza suma 2 liczb w tej tabeli to \"%s\" Liczby - \"%s\" i \"%s\"\n", sum, minValueFirst, minValueSecond);
                     } else {
 
-                        // Niestety też znalezione na StackOverflow
-                        for (int j = 1; j < tableMore.length; j++) {
-                            if (minValueFirst > tableMore[j]) {
+                        //znalezione na StackOverflow
+                        for (int j = 0; j < tableMore.length; j++) {
+                            if (tableMore[j] < minValueFirst){
                                 minValueSecond = minValueFirst;
                                 minValueFirst = tableMore[j];
-                            }else if (tableMore[j] >= minValueSecond && tableMore[j] <= minValueFirst) {
+                            }else if (tableMore[j] < minValueSecond) {
                                 minValueSecond = tableMore[j];
                             }
                         }

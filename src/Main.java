@@ -38,7 +38,7 @@ public class Main {
                         Task_09.task();
                         break;
                     case 10:
-
+                        Task_10.task();
                         break;
                     case 11:
                         Task_11.task();
