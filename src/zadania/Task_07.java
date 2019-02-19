@@ -1,29 +1,17 @@
 package zadania;
 
-
 import controller.Controller;
-import tableTablica.Tablica;
-
 import java.util.*;
+import static tableTablica.Tablica.userTable;
 
 public class Task_07 {
     public static int task(){
         do {
             System.out.println("7.  Znajdź wszystkie pary liczb, których suma jest równa danej liczbie K (bez sortowania). ");
             System.out.println("\n\nCzy chcesz stworzyć tablicę sam, czy chcesz wygenerować tablicę?\n1. Wygeneruj\n2. Stwórz sam\n0. Wyłącz program");
-            int[] userTable = new int[0];
-            switch (Controller.choice(2)) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    userTable = Tablica.automatic();
-                    break;
-                case 2:
-                    userTable = Tablica.userInput();
-                    break;
-            }
-            System.out.println("\nTwoja tablica to:");
-            System.out.print(Arrays.toString(userTable)+"\n");
+
+            int[] userTable = userTable();
+
             if (userTable.length == 1) {
                 System.out.printf("Tablica składa się tylko z jednego elementu i nie mozna dla niej przeprowadzic obliczen\n");
             } else {
@@ -34,8 +22,8 @@ public class Task_07 {
                     scanner.next();
                 }
                 int lookFor = scanner.nextInt();
+                HashSet<String > hash = new HashSet<>();
                 String result = null;
-                StringBuilder build = new StringBuilder();
                 for (int i = 0; i < userTable.length; i++) {
                     for (int j = 0; j < userTable.length; j++) {
                         if ((i != j) && (i != (userTable.length - 1))) {
@@ -43,21 +31,22 @@ public class Task_07 {
                                 int x = userTable[i];
                                 int y = userTable[j];
                                 result = String.format("Szukana przez Ciebie liczba \"%s\" jest sumą liczb \"%s\" oraz \"%s\"\n", lookFor, x, y);
-                                build.append(result);
-
+                                hash.add(result);
                             }
                         }
                     }
                 }
                 if (result == null) {
                     System.out.println("Taka suma nie istnieje");
-                }
 
+                }else if (result != null){
+                System.out.println(hash);
+                }
                 //System.out.println(build);
-            /*
+            /*Po poznaniu HashSet usuniete
             Znalezione na StacOverflow
             Usuwa zduplikowane linie
-             */
+
 
                 String s = build.toString();
                 String[] tokens = s.split("\n");
@@ -79,8 +68,9 @@ public class Task_07 {
                 }
                 String resulty = resultBuilder.toString();
                 System.out.println(resulty);
-
+                */
             }
+
         }while(Controller.runTaskAgain());
         return -1;
     }

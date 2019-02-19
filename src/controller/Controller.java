@@ -25,6 +25,7 @@ public class Controller {
             }
         }
     }
+
     public static boolean runTaskAgain() {
         /*
         Method will ask you if You want to run the program again
@@ -46,7 +47,6 @@ public class Controller {
         }
     }
 
-
     public static int choice(int x){
         System.out.println("\n\nWprowadź numer");
         Scanner scanner = new Scanner((System.in));
@@ -64,6 +64,7 @@ public class Controller {
             }
         }
     }
+
     public static int userInputNumber() {
         Scanner scanner = new Scanner(System.in);
         while(true) {

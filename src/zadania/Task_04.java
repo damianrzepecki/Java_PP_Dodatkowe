@@ -1,28 +1,16 @@
 package zadania;
 
 import controller.Controller;
-import tableTablica.Tablica;
-
-import java.util.Arrays;
+import static tableTablica.Tablica.userTable;
 
 public class Task_04 {
     public static int task(){
         do {
             System.out.println("4.  Znajdź największy iloczyn dwóch liczb w tabeli N liczb całkowitych. ");
             System.out.println("\n\nCzy chcesz stworzyć tablicę sam, czy chcesz wygenerować tablicę?\n1. Wygeneruj\n2. Stwórz sam\n0. Wyłącz program");
-            int[] userTable = new int[0];
-            switch (Controller.choice(2)) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    userTable = Tablica.automatic();
-                    break;
-                case 2:
-                    userTable = Tablica.userInput();
-                    break;
-            }
-            System.out.println("\nTwoja tablica to:");
-            System.out.print(Arrays.toString(userTable)+"\n");
+
+            int[] userTable = userTable();
+
             int maxValueSecond = userTable[0];
             int maxValueFirst = userTable[0];
             if(userTable.length == 1){

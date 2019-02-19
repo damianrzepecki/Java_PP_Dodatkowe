@@ -1,5 +1,8 @@
 package tableTablica;
 
+import controller.Controller;
+
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -69,5 +72,23 @@ public class Tablica {
                 }
                     return new int[0];
             }
+    }
+
+    public static int[] userTable() {
+        int[] userTable = new int[0];
+        switch (Controller.choice(2)) {
+            case 0:
+                System.exit(0);
+            case 1:
+                userTable = Tablica.automatic();
+                break;
+            case 2:
+                userTable = Tablica.userInput();
+                break;
+
+        }
+        System.out.println("\nTwoja tablica to:");
+        System.out.print(Arrays.toString(userTable)+"\n");
+        return userTable;
     }
 }
