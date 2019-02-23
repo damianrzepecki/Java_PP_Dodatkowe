@@ -43,7 +43,7 @@ public class Tablica {
         return new int[0];
     }
 
-    public static int[] userInput() {
+    public static int[] userInput(){
             Scanner scanner = new Scanner(System.in);
             while(true){
                 try {

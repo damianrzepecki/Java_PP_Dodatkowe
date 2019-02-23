@@ -31,7 +31,7 @@ public class Controller {
         Method will ask you if You want to run the program again
         Yes = T,t No = N,n
         Other answers will run the method again
-         */
+         *//
         while(true){
         Scanner skanner = new Scanner(System.in);
             System.out.println("\nCzy chcesz ponownie uruchomić Zadanie (Z), czy Wyjść z zadania (W)");
@@ -46,7 +46,6 @@ public class Controller {
             }
         }
     }
-
     public static int choice(int x){
         System.out.println("\n\nWprowadź numer");
         Scanner scanner = new Scanner((System.in));
@@ -81,3 +80,4 @@ public class Controller {
     }
 }
 
+// petla wprowadza blad przy liczbie szukanej mniejszej niz wszystkie w tabeli
